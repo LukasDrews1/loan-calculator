@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Loan Calculator</title>
+      <link href="style.css" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+      <link rel="manifest" href="/site.webmanifest">
+      <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+      <meta name="msapplication-TileColor" content="#da532c">
+      <meta name="theme-color" content="#dfdbdb">
+   </head>
+   <body>
+      <div class="container">
+         <div class="chart ">
+            <canvas id="myChart"></canvas>
+         </div>
+         <div class="box input-group">
+            <label for="loan">Loan amount:</label>
+            <input class="form-control" id="loan" type="number" placeholder="100000" min="0">
+            <label for="payment">Payment amount:</label>
+            <input class="form-control" id="payment" type="number" placeholder="100000" min="0">
+            <label for="years">Years:</label>
+            <input class="form-control" id="years" type="number" value="30" max="1000" min="1">
+            <label for="rate">Rate in percent:</label>
+            <input class="form-control" id="rate" type="number" value="0.5" min="0">
+            <button class="btn btn-primary" onclick="setUp()">Calculate</button>
+         </div>
+      </div>
+      <div id="modal1" class="modal" tabindex="-1" role="dialog">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title">Invalid calculation</h5>
+               </div>
+               <div class="modal-body">
+                  <p>The inputs you have provided are invalid.</p>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" onclick="closeDialog()">Close</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
+      <script src="script.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+   </body>
+</html>
