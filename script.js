@@ -48,6 +48,16 @@ function loanCalculator(loan, payment, years = 30, rate = 0.05) {
         let loanRate = loan * rate;
         total = total + loanRate;
         loan += loanRate;
+
+        if (loan < 0) 
+            loan = 0;
+
+        if (total < 0) 
+            total = 0;
+
+        if (loanRate < 0) 
+            loanRate = 0;            
+            
         history.push({
             loan: Math.round(loan / 100) * 100,
             loanRate: Math.round(loanRate / 100) * 100,
